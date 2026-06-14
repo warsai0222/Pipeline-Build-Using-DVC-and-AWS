@@ -1,9 +1,9 @@
 data_ingestion:
-  test_size: 0.2
+  test_size: 0.3
 
 feature_engineering:
   max_features: 50 # determines the maximum number of features to be extracted from the text data using the TfidfVectorizer, which can help in reducing dimensionality and improving model performance by focusing on the most relevant features.
 
 model_building:
-  n_estimators: 50 # decides the number of trees in the random forest model, which is a key hyperparameter that can affect the model's performance and accuracy.
+  n_estimators: 100 # decides the number of trees in the random forest model, which is a key hyperparameter that can affect the model's performance and accuracy.
   random_state: 42 # ensures reproducibility by setting a fixed seed for the random number generator used in the model.

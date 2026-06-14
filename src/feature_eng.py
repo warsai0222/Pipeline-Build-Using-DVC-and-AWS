@@ -43,7 +43,7 @@ def load_params(params_path: str) -> dict:
         logger.error('Unexpected error: %s', e)
         raise
 
-def load_data(file_path: str) -> pd.DataFrame:
+def load_data(file_path: str) -> pd.DataFrame:  #loads data from a CSV file and fills any NaN values with an empty string, while also logging the process and handling potential exceptions that may arise during file loading and parsing.Loads the from the interim folder which is the output of the pre-processing step, and this data will be used for feature engineering.
     """Load data from a CSV file."""
     try:
         df = pd.read_csv(file_path)
@@ -92,7 +92,7 @@ def save_data(df: pd.DataFrame, file_path: str) -> None:
         logger.error('Unexpected error occurred while saving the data: %s', e)
         raise
 
-def main():
+def main(): # Main function to execute the feature engineering process, it loads parameters, data, applies tfidf transformation, and saves the processed data all while handling exceptions and logging the process.
     try:
         params = load_params(params_path='params.yaml')
         max_features = params['feature_engineering']['max_features']
@@ -109,5 +109,5 @@ def main():
         logger.error('Failed to complete the feature engineering process: %s', e)
         print(f"Error: {e}")
 
-if __name__ == '__main__':
+if __name__ == '__main__': # This block ensures that the main function is executed only when the script is run directly, and not when it is imported as a module in another script.
     main()
