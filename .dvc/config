@@ -1,0 +1,4 @@
+[core]
+    remote = dvcproject
+['remote "dvcproject"']
+    url = s3://mlopslearningwithdvc
